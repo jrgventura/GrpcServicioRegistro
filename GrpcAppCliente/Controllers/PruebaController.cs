@@ -16,14 +16,14 @@ namespace GrpcAppCliente.Controllers
 
         [HttpPost]
         public async Task<IActionResult> Index(string nombre = "",
-            string apellidos="") {
+            string apellido="") {
             
             var canal = GrpcChannel.ForAddress("https://localhost:7091/");
             greeterClient = new Greeter.GreeterClient(canal);
 
             var helloRequest = new HelloRequest();
             helloRequest.Nombre = nombre;   
-            helloRequest.Apellidos = apellidos; 
+            helloRequest.Apellidos = apellido; 
 
             var mensaje = await greeterClient.SayHelloAsync(helloRequest);
             ViewBag.mensaje = mensaje.Message;
