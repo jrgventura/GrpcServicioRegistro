@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Prueba gRPC";
+}
+<h1>Prueba de gRPC</h1>
+
+<form method="post" asp-action="Index">
+    Ingrese el Nombre <input name="nombre" value="@ViewBag.nombre" /><br />
+    Ingrese el Apellido <input name="apellido" value="@ViewBag.apellido" /><br />
+    <button>Aceptar</button>
+</form>
+
+<div>
+    @ViewBag.mensaje
+</div>
